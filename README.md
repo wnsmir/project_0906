@@ -11,6 +11,8 @@
 
   
 **변수명 id, name, phone, email**
+
+  
 -진협
 create (name, phone, email)
 read (id)
