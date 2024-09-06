@@ -20,12 +20,12 @@ def main():
 
         elif choice == '2':
             # 사용자 조회
-            user_id = int(input("조회할 사용자 ID를 입력하세요: "))
-            manager.read_user(user_id)
+            id = int(input("조회할 사용자 ID를 입력하세요: "))
+            manager.read_user(id)
 
         elif choice == '3':
             # 사용자 수정
-            user_id = int(input("수정할 사용자 ID를 입력하세요: "))
+            id = int(input("수정할 사용자 ID를 입력하세요: "))
             name = input("새 이름 (변경하지 않으려면 빈칸으로 두세요): ")
             email = input("새 이메일 (변경하지 않으려면 빈칸으로 두세요): ")
             phone = input("새 전화번호 (변경하지 않으려면 빈칸으로 두세요): ")
@@ -35,12 +35,12 @@ def main():
             email = email if email else None
             phone = phone if phone else None
             
-            manager.update_user(user_id, name, email, phone)
+            manager.update_user(id, name, email, phone)
 
         elif choice == '4':
             # 사용자 삭제
-            user_id = int(input("삭제할 사용자 ID를 입력하세요: "))
-            manager.delete_user(user_id)
+            id = int(input("삭제할 사용자 ID를 입력하세요: "))
+            manager.delete_user(id)
 
         elif choice == '5':
             # 프로그램 종료
@@ -60,6 +60,31 @@ class phoneBook:
     def create(self, id, name, phone_number, email): # 연락처 추가
         self.contacts[id] = {'이름': name, '전화번호': phone_number, '이메일': email}
         print(f"ID {id}의 연락처가 추가되었습니다.")
+    
+    
+    
+    # update함수
+    def update(self, id, name=None, phone_number=None, email=None):
+        # ID가 존재하는지 확인
+        if id in self.contacts:
+            if name:
+                self.contacts[id]['이름'] = name
+            if phone_number:
+                self.contacts[id]['전화번호'] = phone_number
+            if email:
+                self.contacts[id]['이메일'] = email
+            print(f"ID {id}의 연락처가 업데이트되었습니다.")
+        else:
+            print(f"ID {id}에 해당하는 연락처가 존재하지 않습니다.")
+            
+    # delete함수    
+    def delete(self, id):
+        # ID가 존재하는지 확인하고 삭제
+        if id in self.contacts:
+            del self.contacts[id]
+            print(f"ID {id}의 연락처가 삭제되었습니다.")
+        else:
+            print(f"ID {id}에 해당하는 연락처가 존재하지 않습니다.")
 
     def read(self): # 전화번호부 출력
         if not self.contacts:

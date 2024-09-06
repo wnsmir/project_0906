@@ -5,3 +5,4 @@ class phoneBook:
     def create(self, id, name, phone_number, email): # 연락처 추가
         self.contacts[id] = {'이름': name, '전화번호': phone_number, '이메일': email}
         print(f"ID {id}의 연락처가 추가되었습니다.")
+
