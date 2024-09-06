@@ -24,7 +24,7 @@ delete(id)
 -준용
 main함수
 class생성
-
+<br><br>
   
 클래스, 변수 표기법 : 카멜표기법
 
