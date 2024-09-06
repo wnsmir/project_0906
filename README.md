@@ -10,6 +10,7 @@
 <br><br>
 **변수명 id, name, phone, email**
 
+https://shimseonjo.github.io/db/python_mysql
   
 -진협
 create (name, phone, email)
