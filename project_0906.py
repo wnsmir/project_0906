@@ -23,7 +23,7 @@ class phoneBook:
             print(f"ID {id}에 해당하는 연락처가 존재하지 않습니다.")
             
     # delete함수    
-def delete(self, id):
+    def delete(self, id):
         # ID가 존재하는지 확인하고 삭제
         if id in self.contacts:
             del self.contacts[id]
