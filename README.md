@@ -1,11 +1,13 @@
 # project_0906
 
-팀원 조장 : 박준용 서우진 김진협
+## 사용자데이터 저장관리 프로그램
+
+### 팀원 조장 : 박준용 서우진 김진협
 
 
 사용자 데이터를 저장하는 관리 프로그램
 
-진협 변수명 id, name, phone, email
+**진협 변수명 id, name, phone, email**
 create (name, phone, email)
 read (id)
 
